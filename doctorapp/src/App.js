@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-
+import React from 'react'
 import { ToastProvider } from 'react-toast-notifications';
 
 import DoctorList from './components/doctor/DoctorList/doctorList';
@@ -10,6 +10,11 @@ import {Routes,Route, BrowserRouter} from "react-router-dom"
 import MailSender from './components/mailSender/MailSenderModel';
 import UseMemo from './components/useMemo';
 import UseReducer from './components/useReducer';
+import ComA from './components/practiseContext/comA';
+import ComC from './components/practiseContext/comC';
+
+
+export const UserContext = React.createContext("");
 
 function App() {
   return (
@@ -33,6 +38,11 @@ function App() {
       </ToastProvider> */}
       {/* <UseMemo/> */}
       <UseReducer/>
+  <UserContext.Provider value='Asif'>
+      <ComA/>
+      <ComC/>
+  </UserContext.Provider>
+     
      
     </div>
   );
